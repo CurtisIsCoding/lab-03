@@ -1,8 +1,15 @@
 # CMPUT 301 : Lab 3 Participation Exercise
 
 ## References and Resources
-
-List any resources used here, or simply put `N/A` if not applicable.
+DialogFragment (AndroidX) — API reference
+Display dialogs with DialogFragment — guide
+Create a fragment — guide
+AlertDialog (AppCompat) — API reference
+ArrayAdapter — API reference
+ListView — API reference
+FloatingActionButton — API reference (Material)
+Material Design: Floating Action Button — guidelines
+Layout resources — guide.
 
 ## Verbal Collaboration
 
