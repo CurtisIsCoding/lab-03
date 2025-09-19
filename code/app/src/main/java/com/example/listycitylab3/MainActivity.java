@@ -33,4 +33,25 @@ public class MainActivity extends AppCompatActivity implements AddCityFragment.A
         setContentView(R.layout.activity_main);
 
         String[] cities = { "Edmonton", "Vancouver", "Toronto" };
-        String[] provi
+        String[] provinces = { "AB", "BC", "ON" };
+
+        dataList = new ArrayList<>();
+        for (int i = 0; i < cities.length; i++) {
+            dataList.add(new City(cities[i], provinces[i]));
+        }
+
+        cityList = findViewById(R.id.city_list);
+        cityAdapter = new CityArrayAdapter(this, dataList);
+        cityList.setAdapter(cityAdapter);
+        // tap row for edit
+        cityList.setOnItemClickListener((AdapterView<?> parent, android.view.View view, int position, long id) -> {
+            City selected = cityAdapter.getItem(position);
+            new EditCityFragment(selected).show(getSupportFragmentManager(), "Edit City");
+        });
+
+        FloatingActionButton fab = findViewById(R.id.button_add_city);
+        fab.setOnClickListener(v ->
+                new AddCityFragment().show(getSupportFragmentManager(), "Add City")
+        );
+    }
+}
